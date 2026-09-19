@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fomocheckminhdam.vn | FOMO Check Minh Đạm</title>
+<style>
+:root{--purple:#7448e8;--violet:#a148eb;--deep:#4636c9;--teal:#14c9c2;--ink:#2e2f43;--muted:#74758a;--line:#eceaf4;--paper:#fff;--soft:#f7f5ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fafaff}
+header{min-height:610px;color:#fff;background:linear-gradient(145deg,#b046e7 0%,#7d45e8 45%,#4937ce 100%);position:relative;overflow:hidden;padding:0 24px}
+header:before,header:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.09)}
+header:before{width:300px;height:300px;right:-90px;bottom:60px}header:after{width:160px;height:160px;left:10%;bottom:-70px}
+.nav{height:82px;max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:3}
+.brand{font-size:20px;font-weight:900;display:flex;align-items:center;gap:8px}.brand:before{content:"▣";color:#26e0d7}.brand span{color:#fff}
+.navlinks{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:700}.navlinks a{color:#fff;text-decoration:none;opacity:.9}.navlinks a:hover{opacity:1}
+.nav-cta{background:#ffb55f;padding:12px 20px;border-radius:999px;color:#fff!important;box-shadow:0 8px 22px rgba(64,25,120,.18)}
+.hero{max-width:1060px;margin:72px auto 0;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;position:relative;z-index:2;text-align:left}
+.hero-copy .eyebrow{font-size:12px;letter-spacing:2px;font-weight:900;color:#7ff5e9;text-transform:uppercase}
+header h1{font-size:clamp(43px,6vw,68px);line-height:1.06;margin:12px 0 20px;letter-spacing:-2px}
+header p{font-size:16px;line-height:1.7;color:#f0eaff;margin:0 0 26px;max-width:540px}
+.hero-chip{display:inline-block;background:var(--teal);color:#fff;padding:14px 24px;border-radius:999px;font-size:13px;font-weight:900;box-shadow:0 10px 25px rgba(0,0,0,.13)}
+.hero-art{height:310px;position:relative;display:grid;place-items:center}
+.screen{width:360px;height:225px;background:#fff;border:13px solid #343053;border-radius:10px;box-shadow:0 22px 45px rgba(38,20,100,.28);position:relative}
+.screen:before{content:"FOMO CHECK";position:absolute;left:24px;top:30px;color:#704be1;font-weight:900;font-size:26px}.screen:after{content:"Hiểu mình • Dùng mạng có chủ đích";position:absolute;left:24px;top:72px;color:#8b8aa0;font-size:12px}
+.mini-card{position:absolute;background:#fff;color:#6c54d7;border-radius:13px;padding:14px 18px;font-weight:900;box-shadow:0 12px 26px rgba(45,25,100,.18)}.m1{left:0;top:45px}.m2{right:-4px;bottom:45px;color:#10a9a5}.m3{left:90px;bottom:8px;color:#e45c91}
+.wrap{max-width:1020px;margin:0 auto;padding:60px 20px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 10px 35px rgba(57,45,120,.07);margin-bottom:25px}
+h2{font-size:27px;margin:0 0 8px;color:#393550}.section-sub{color:var(--muted);line-height:1.6;margin:0 0 24px}
+.intro-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.pill{background:var(--soft);border:1px solid #e8e0fb;padding:18px 10px;border-radius:13px;text-align:center;font-weight:800;font-size:13px;color:#624db3}
+.question{padding:21px 0;border-bottom:1px solid var(--line)}.question label{display:block;font-weight:800;margin-bottom:10px;line-height:1.45}
+select{width:100%;padding:13px 14px;border:1px solid #ddd9e9;border-radius:9px;background:#fff;font-size:15px;color:var(--ink);outline:none}select:focus{border-color:#8c5ce8;box-shadow:0 0 0 4px rgba(140,92,232,.09)}
+button{width:100%;border:0;border-radius:999px;padding:16px;background:var(--teal);color:#fff;font-weight:900;font-size:16px;cursor:pointer;box-shadow:0 10px 24px rgba(20,201,194,.22)}
+#result{display:none}.result-top{display:flex;gap:25px;align-items:center;flex-wrap:wrap}.score-ring{width:140px;height:140px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--teal) var(--pct,0%),#eeeaf8 0);position:relative}.score-ring:after{content:"";position:absolute;width:106px;height:106px;background:#fff;border-radius:50%}.score{font-size:33px;font-weight:950;z-index:2}.score small{font-size:13px;color:var(--muted)}.result-copy{flex:1;min-width:220px}.level{font-size:27px;font-weight:900;color:#6547cf}.meter,.bar{display:none}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}.tag{background:#f0ebff;color:#6547cf;padding:8px 11px;border-radius:999px;font-size:12px;font-weight:800}
+.dim{margin:14px 0}.dim-head{display:flex;justify-content:space-between;font-size:13px;font-weight:800;margin-bottom:7px}.dim-meter{height:9px;background:#efedf6;border-radius:999px;overflow:hidden}.dim-bar{height:100%;background:linear-gradient(90deg,#7851e5,#14c9c2)}
+.solution-title{margin-top:30px;padding:18px 20px;border-radius:16px 16px 0 0;background:linear-gradient(100deg,#7049dd,#9e49e8);color:#fff;display:flex;gap:13px;align-items:center}.solution-title h3{margin:2px 0}.solution-kicker{font-size:10px;font-weight:900;letter-spacing:1.5px}.solution-icon{width:44px;height:44px;background:rgba(255,255,255,.16);border-radius:12px;display:grid;place-items:center;font-size:22px}
+.solution{background:#f8f5ff;border:1px solid #e4dbfb;border-top:0;padding:13px;border-radius:0 0 16px 16px}.plan-item{margin:8px 0;padding:14px;background:#fff;border-radius:11px;border-left:5px solid var(--teal);box-shadow:0 4px 14px rgba(65,48,130,.05)}.plan-item:first-child{border-left-color:#ff9c69;background:#fff8f2}
+.note{background:#fff9ef;border:1px solid #f2e3c7;padding:16px;border-radius:12px;line-height:1.6;color:#665638}.hint{color:var(--muted);font-size:13px;line-height:1.55}
+footer{text-align:center;padding:35px 20px;color:#7e7b91;font-size:12px;background:#fff}
+@media(max-width:760px){header{min-height:720px}.navlinks a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr;margin-top:45px;text-align:center;gap:25px}.hero-copy p{margin-left:auto;margin-right:auto}.hero-art{height:250px}.screen{width:285px;height:180px}.screen:before{font-size:21px}.intro-grid{grid-template-columns:1fr 1fr}.wrap{padding:35px 15px}.card{padding:21px}}
+
+/* ===== HIGHLIGHT CÁC ĐỀ MỤC ===== */
+.card > h2{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  position:relative;
+  padding:10px 18px 11px 20px;
+  margin:0 0 14px;
+  border-radius:12px;
+  color:#fff;
+  background:linear-gradient(100deg,#7049dd 0%,#9e49e8 72%,#b65be7 100%);
+  box-shadow:0 8px 20px rgba(112,73,221,.20);
+  font-size:27px;
+  line-height:1.2;
+}
+.card > h2::before{
+  content:"";
+  width:6px;
+  height:28px;
+  border-radius:999px;
+  background:#7ff5e9;
+  box-shadow:0 0 0 4px rgba(127,245,233,.14);
+}
+#fomoForm > h2{
+  background:linear-gradient(100deg,#5d46d8,#8b4ce8);
+}
+#result > h2{
+  background:linear-gradient(100deg,#6245d7,#14bdb8);
+}
+#result > h3{
+  display:inline-block;
+  margin:28px 0 16px;
+  padding:9px 14px;
+  border-radius:10px;
+  background:#eee9ff;
+  border-left:5px solid #7448e8;
+  color:#5141a7;
+  font-size:18px;
+}
+.card > h2 + .section-sub{
+  margin-top:0;
+}
+.question label{
+  color:#393550;
+}
+.question label::first-letter{
+  color:#7448e8;
+}
+@media(max-width:760px){
+  .card > h2{
+    font-size:21px;
+    padding:9px 13px 10px 15px;
+    border-radius:10px;
+  }
+  .card > h2::before{
+    height:23px;
+    width:5px;
+  }
+  #result > h3{
+    font-size:16px;
+  }
+}
+
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+  <div class="brand">FOMOCHECK<span>MINHDAM.VN</span></div>
+  <div class="navlinks">
+    <a href="#about">Giới thiệu</a><a href="#fomoForm">Đánh giá FOMO</a><a href="#result">JOMO</a>
+    <a class="nav-cta" href="#fomoForm">Bắt đầu đánh giá</a>
+  </div>
+</div>
+<div class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Dự án khoa học kĩ thuật • THPT Minh Đạm</div>
+    <h1>Hiểu FOMO.<br>Sống cân bằng hơn.</h1>
+    <p>Công cụ hỗ trợ học sinh nhận diện biểu hiện FOMO, đánh giá mức độ và nhận gợi ý JOMO phù hợp với thói quen sử dụng mạng xã hội.</p>
+    <a class="hero-chip" href="#fomoForm" style="text-decoration:none">Khám phá ngay →</a>
+  </div>
+  <div class="hero-art">
+    <div class="screen"></div>
+    <div class="mini-card m1">📱 FOMO</div>
+    <div class="mini-card m2">✓ JOMO</div>
+    <div class="mini-card m3">🎯 Focus</div>
+  </div>
+</div>
+</header>
+
+<main class="wrap">
+<section class="card" id="about">
+<h2>5 nhóm biểu hiện được phân tích</h2><p class="section-sub">Không chỉ nhìn vào thời gian dùng mạng xã hội, công cụ xem xét cả hành vi, cảm xúc và khả năng tập trung.</p>
+<div class="intro-grid">
+<div class="pill">📱 Kiểm tra MXH</div><div class="pill">😟 Lo sợ bỏ lỡ</div>
+<div class="pill">🔥 Bắt kịp xu hướng</div><div class="pill">👥 So sánh xã hội</div>
+<div class="pill">🎯 Mất tập trung</div>
+</div>
+<p class="hint">Các nhóm biểu hiện bám theo tài liệu FOMO của nhóm nghiên cứu. Ngưỡng điểm trong bản web là quy tắc thử nghiệm của nhóm, không phải tiêu chuẩn chẩn đoán tâm lý.</p>
+</section>
+
+<form id="fomoForm" class="card">
+<h2>Đánh giá FOMO của bạn</h2><p class="section-sub">Chọn phương án gần nhất với thói quen hiện tại. Không có đáp án đúng hay sai.</p>
+
+<div class="question">
+<label>1. Trung bình mỗi ngày bạn sử dụng mạng xã hội bao lâu?</label>
+<select id="time"><option value="0">Dưới 1 giờ</option><option value="1">1–2 giờ</option><option value="2">2–4 giờ</option><option value="3">Trên 4 giờ</option></select>
+</div>
+
+<div class="question">
+<label>2. Bạn kiểm tra mạng xã hội khoảng bao nhiêu lần mỗi ngày?</label>
+<select id="check"><option value="0">≤ 5 lần</option><option value="1">6–10 lần</option><option value="2">11–20 lần</option><option value="3">Trên 20 lần</option></select>
+</div>
+
+<div class="question">
+<label>3. Bạn có xu hướng mở mạng xã hội ngay khi có thông báo?</label>
+<select id="notification"><option value="0">Hiếm khi</option><option value="1">Thỉnh thoảng</option><option value="2">Thường xuyên</option><option value="3">Gần như luôn luôn</option></select>
+</div>
+
+<div class="question">
+<label>4. Khi không thể kiểm tra mạng xã hội, bạn cảm thấy lo lắng/bất an ở mức nào?</label>
+<select id="anxiety"><option value="0">Không</option><option value="1">Ít</option><option value="2">Khá rõ</option><option value="3">Rất rõ</option></select>
+</div>
+
+<div class="question">
+<label>5. Bạn lo mình bỏ lỡ hoạt động hoặc trải nghiệm của bạn bè ở mức nào?</label>
+<select id="missing"><option value="0">Không</option><option value="1">Thỉnh thoảng</option><option value="2">Thường xuyên</option><option value="3">Rất thường xuyên</option></select>
+</div>
+
+<div class="question">
+<label>6. Bạn muốn theo dõi và nhanh chóng bắt kịp các xu hướng đang được quan tâm?</label>
+<select id="trend"><option value="0">Không quan tâm</option><option value="1">Thỉnh thoảng</option><option value="2">Thường xuyên</option><option value="3">Luôn muốn bắt kịp</option></select>
+</div>
+
+<div class="question">
+<label>7. Khi xem mạng xã hội, bạn so sánh bản thân với trải nghiệm/thành tích của người khác?</label>
+<select id="compare"><option value="0">Không</option><option value="1">Ít</option><option value="2">Thường xuyên</option><option value="3">Rất thường xuyên</option></select>
+</div>
+
+<div class="question">
+<label>8. Bạn bị mất tập trung khi học vì muốn kiểm tra điện thoại/mạng xã hội?</label>
+<select id="focus"><option value="0">Không</option><option value="1">Ít</option><option value="2">Thường xuyên</option><option value="3">Rất thường xuyên</option></select>
+</div>
+
+<button type="submit">Phân tích FOMO</button>
+</form>
+
+<section id="result" class="card">
+<h2>Kết quả phân tích</h2>
+<div class="result-top">
+  <div class="score-ring" id="scoreRing"><div class="score"><span id="score">0</span><small> / 24</small></div></div>
+  <div class="result-copy"><div class="level" id="level"></div><p id="desc"></p></div>
+</div>
+<div class="meter"><div class="bar" id="bar"></div></div>
+<div class="tags" id="tags"></div>
+<h3>Mức độ theo từng nhóm biểu hiện</h3>
+<div id="dimensions"></div>
+<div class="solution-title">
+  <span class="solution-icon">✨</span>
+  <div><span class="solution-kicker">DÀNH RIÊNG CHO BẠN</span><h3>Kế hoạch cải thiện FOMO bằng JOMO</h3></div>
+</div>
+<div class="solution" id="solution"></div>
+<p class="hint" id="recheck"></p>
+</section>
+
+<section class="card">
+<h2>Về công cụ</h2>
+<div class="note"><b>Lưu ý khoa học:</b> Thời gian sử dụng mạng xã hội không đủ để tự nó xác định FOMO. Công cụ kết hợp nhiều biểu hiện hành vi và cảm xúc. Kết quả chỉ phục vụ nghiên cứu/minh họa của dự án KHKT, không phải công cụ chẩn đoán sức khỏe tâm lý.</div>
+</section>
+</main>
+
+<footer>fomocheckminhdam.vn • Dự án KHKT • FOMO ở học sinh THPT • Đánh giá + JOMO cá nhân hóa</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+$("fomoForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const ids=["time","check","notification","anxiety","missing","trend","compare","focus"];
+  const values=ids.map(id=>Number($(id).value));
+  const total=values.reduce((a,b)=>a+b,0);
+  let level,desc;
+  if(total<=6){level="FOMO thấp";desc="Các biểu hiện FOMO hiện chưa nổi bật theo quy tắc phân loại thử nghiệm."}
+  else if(total<=12){level="FOMO trung bình";desc="Đã xuất hiện một số biểu hiện FOMO; nên chú ý thói quen kiểm tra mạng xã hội và khả năng tập trung."}
+  else if(total<=18){level="FOMO cao";desc="Nhiều biểu hiện FOMO xuất hiện tương đối rõ, đặc biệt cần xem yếu tố lo sợ bỏ lỡ và gián đoạn việc học."}
+  else{level="FOMO rất cao";desc="Các biểu hiện FOMO xuất hiện ở nhiều nhóm. Nên chủ động điều chỉnh thói quen sử dụng mạng xã hội và thực hành JOMO."}
+
+  const manifestations=[
+    ["Sử dụng MXH nhiều",values[0]],["Kiểm tra MXH thường xuyên",values[1]],
+    ["Phản ứng với thông báo",values[2]],["Lo lắng/bất an",values[3]],
+    ["Sợ bỏ lỡ hoạt động",values[4]],["Chạy theo xu hướng",values[5]],
+    ["So sánh xã hội",values[6]],["Mất tập trung",values[7]]
+  ].filter(x=>x[1]>=2).sort((a,b)=>b[1]-a[1]);
+
+  $("score").textContent=total;
+  $("bar").style.width=(total/24*100)+"%";
+  $("scoreRing").style.setProperty("--pct",(total/24*100)+"%");
+  $("level").textContent=level;
+  $("desc").textContent=desc;
+  $("tags").innerHTML=manifestations.length
+    ? manifestations.map(x=>`<span class="tag">${x[0]}</span>`).join("")
+    : '<span class="tag">Chưa có biểu hiện nổi bật</span>';
+
+  // 5 nhóm biểu hiện bám theo tài liệu của nhóm
+  const dims = [
+    ["Kiểm tra mạng xã hội", Math.round((values[1]+values[2])/2)],
+    ["Lo sợ bỏ lỡ / bất an", Math.round((values[3]+values[4])/2)],
+    ["Bắt kịp xu hướng", values[5]],
+    ["So sánh xã hội", values[6]],
+    ["Mất tập trung", values[7]]
+  ];
+  const dimLevel = v => v===0 ? "Thấp" : v===1 ? "Nhẹ" : v===2 ? "Khá rõ" : "Rất rõ";
+  $("dimensions").innerHTML = dims.map(d => `
+    <div class="dim">
+      <div class="dim-head"><span>${d[0]}</span><span>${dimLevel(d[1])}</span></div>
+      <div class="dim-meter"><div class="dim-bar" style="width:${d[1]/3*100}%"></div></div>
+    </div>`).join("");
+
+  let tips=[];
+  if(values[1]>=2||values[2]>=2)
+    tips.push("<b>Digital Timebox:</b> đặt 2–4 khung giờ cố định để kiểm tra mạng xã hội; tắt các thông báo không cần thiết.");
+  if(values[3]>=2||values[4]>=2)
+    tips.push("<b>JOMO Break:</b> dành 30–60 phút mỗi ngày không dùng mạng xã hội; chuyển sang đọc sách, vận động hoặc trò chuyện trực tiếp.");
+  if(values[5]>=2)
+    tips.push("<b>Trend Filter:</b> trước khi chạy theo một xu hướng, tự hỏi: “Nội dung này có thực sự hữu ích hoặc phù hợp với mình không?”");
+  if(values[6]>=2)
+    tips.push("<b>Self-Focus:</b> giảm theo dõi nội dung khiến bản thân thường xuyên so sánh; tập trung vào mục tiêu và tiến bộ cá nhân.");
+  if(values[7]>=2)
+    tips.push("<b>Focus Zone:</b> khi học, để điện thoại ngoài tầm với và học theo phiên tập trung 25–45 phút.");
+  if(values[0]>=2)
+    tips.push("<b>Giảm thời gian có chủ đích:</b> theo dõi Screen Time mỗi ngày và giảm dần thời gian dùng mạng xã hội thay vì cắt đột ngột.");
+  if(!tips.length)
+    tips.push("<b>Duy trì:</b> tiếp tục sử dụng mạng xã hội có chủ đích, giữ cân bằng giữa học tập, nghỉ ngơi và hoạt động trực tiếp.");
+
+  let plan;
+  if(total<=6) plan="Mục tiêu: duy trì mức hiện tại và phòng ngừa FOMO tăng.";
+  else if(total<=12) plan="Mục tiêu: giảm các hành vi kiểm tra mạng xã hội theo phản xạ và tạo ít nhất một khoảng JOMO mỗi ngày.";
+  else if(total<=18) plan="Mục tiêu: ưu tiên 2–3 biểu hiện có điểm cao nhất, thực hiện giải pháp tương ứng hằng ngày rồi đánh giá lại.";
+  else plan="Mục tiêu: áp dụng đồng thời quản lý thông báo, khung giờ MXH, Focus Zone và JOMO Break; theo dõi tiến triển định kỳ.";
+
+  $("solution").innerHTML = `<div class="plan-item"><b>${plan}</b></div>` +
+    tips.map(t=>`<div class="plan-item">${t}</div>`).join("");
+  $("recheck").textContent="Gợi ý: thực hiện kế hoạch trong 7 ngày rồi làm lại bài đánh giá để so sánh điểm và các nhóm biểu hiện. Kết quả chỉ phục vụ nghiên cứu/minh họa, không phải chẩn đoán tâm lý.";
+  $("result").style.display="block";
+  $("result").scrollIntoView({behavior:"smooth"});
+});
+</script>
+</body>
+</html>
